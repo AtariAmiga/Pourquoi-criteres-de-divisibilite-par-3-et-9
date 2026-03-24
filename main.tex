@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+
+\input{0a - preambule}
+
+\title{\textit{Pourquoi} le critère de divisibilité par 9 ?}
+
+\begin{document}
+\maketitle
+
+\textit{"Lorsque la somme ses chiffres d'un nombre est divisible par 9 ou 3, alors le nombre est divisible par 9 ou 3."}
+
+On pourrait croire qu'il y a quelque chose de magique, mais il n'en est rien.
+
+Prenons par exemple $2763$. Nous comptons en base 10, donc nous pouvons décomposer ce nombre en milliers, centaines, dizaines et unités:
+\begin{align*}
+    2763 = 2\times1000 \\ + 7\times100 \\ + 6\times10 \\ + 3\times1
+\end{align*}
+
+Décomposons $1000$ en $999+1$ etc. car $999$ est divisible par $9$ et $3$:
+\begin{align*}
+    2763 = 2\times(999 + 1) \\ + 7\times(99 + 1) \\ + 6\times(9 + 1) \\ + 3\times(0 + 1)
+\end{align*}
+
+Maintenant, regroupons tout ce qui est divisible par 9 et 3 pour s'en débarrasser:
+\begin{align*}
+    2763 = (2\times999 + 7\times99 + 6\times9) \\ + (2 + 7 + 6 + 3)
+\end{align*}
+
+On a 999, 99 et 9 qui sont divisibles par 9 et 3, donc $(2\times999 + 7\times99 + 6\times9)$ est divisible par 9 et 3.
+
+Il nous reste donc vérifier que $(2 + 7 + 6 + 3)$ est bien divisible par 9 et 3.
+
+Or $(2 + 7 + 6 + 3) = 18$ est divisible par $9$ et $3$.
+Donc $2763$ est divisible par $9$ et $3$.
+
+Note: on peut récursivement appliquer la même méthode pour $18$ : $1 + 8 = 9$. $18$ est bien divisible par 9.
+
+\end{document}
